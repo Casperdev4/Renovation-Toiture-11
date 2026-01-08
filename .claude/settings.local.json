@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(node update-forms.js:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }
