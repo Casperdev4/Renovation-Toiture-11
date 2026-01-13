@@ -3,8 +3,15 @@
     "allow": [
       "Bash(node update-forms.js:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: migration formulaires vers webhook WebPrime + ajout champ email\n\n- Remplacement de formsubmit.co par webhook WebPrime\n- Ajout du champ email sur tous les formulaires\n- Script async submitToWebPrime pour envoi AJAX\n- Redirection vers couvreur-11-aude.com apres succes\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(more:*)",
+      "Bash(powershell.exe -NoProfile -Command \"\n@''\n$files = @\\(\n    ''pose-velux-11-aude.html'',\n    ''ravalement-de-facade-11.html'',\n    ''peinture-toiture-11-aude.html'',\n    ''gouttiere-zinc-gouttiere-pvc-11-aude.html'',\n    ''couvreur-thezan-des-corbieres.html'',\n    ''couvreur-saint-couat-daude.html'',\n    ''couvreur-roubia.html'',\n    ''couvreur-saint-andre-de-roquelongue.html'',\n    ''couvreur-paraza.html'',\n    ''couvreur-moux.html'',\n    ''couvreur-ornaisons.html'',\n    ''couvreur-luc-sur-orbieu.html'',\n    ''couvreur-montbrun-des-corbieres.html'',\n    ''couvreur-lezignan-corbieres.html'',\n    ''couvreur-homps.html'',\n    ''couvreur-fontcouverte.html'',\n    ''couvreur-escales.html'',\n    ''couvreur-ferrals-les-corbieres.html'',\n    ''couvreur-cruscades.html'',\n    ''couvreur-canet.html'',\n    ''couvreur-conilhac-corbieres.html'',\n    ''couvreur-boutenac.html'',\n    ''couvreur-bizanet.html''\n\\)\n\n$newBurger = @''\n            <input type=\"\"checkbox\"\" id=\"\"btn\"\">\n            <label for=\"\"btn\"\" class=\"\"burger\"\">\n                <span></span>\n                <span></span>\n                <span></span>\n            </label>\n''@\n\nforeach \\($file in $files\\) {\n    $fullPath = Join-Path ''c:\\\\Users\\\\privo\\\\Desktop\\\\WebPrime\\\\Renovation-Toiture-11'' $file\n    if \\(Test-Path $fullPath\\) {\n        $content = Get-Content $fullPath -Raw -Encoding UTF8\n        $pattern = ''\\(?s\\)<label for=\"\"btn\"\" class=\"\"icon\"\">\\\\s*<svg[^>]*>.*?</svg>\\\\s*</label>\\\\s*<input type=\"\"checkbox\"\" id=\"\"btn\"\">''\n        $content = $content -replace $pattern, $newBurger\n        $content = $content -replace ''DEVIS - GRATUIT'', ''DEVIS GRATUIT''\n        Set-Content $fullPath -Value $content -Encoding UTF8 -NoNewline\n        Write-Host \"\"Modified: $file\"\"\n    } else {\n        Write-Host \"\"Not found: $file\"\"\n    }\n}\n''@ | Out-File -FilePath ''c:\\\\Users\\\\privo\\\\Desktop\\\\WebPrime\\\\Renovation-Toiture-11\\\\update_headers.ps1'' -Encoding UTF8\n\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\privo\\\\Desktop\\\\WebPrime\\\\Renovation-Toiture-11\\\\update_headers.ps1\")",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
